@@ -1,0 +1,56 @@
+# subject; condition; limit; limit-order
+test.EMPLOYEE; T.name='scott'; ; 
+
+# association; ; restriction-condition
+
+#! block additional subjects
+# subject; condition; limit; limit-order
+
+#! block xml-mapping
+inverse-BONUS;employee;NONE
+inverse-role;project_participation;NONE
+inverse-project;project_participation;NONE
+BONUS;bonus;NONE
+boss;boss;NONE
+inverse-boss;employee;NONE
+department;department;NONE
+inverse-employee;project_participation;NONE
+salary;salary;NONE
+inverse-department;employee;NONE
+inverse-salary;employee;NONE
+employee;employee;NONE
+project;project;NONE
+role;role;NONE
+
+#! block datamodelfolder
+test
+
+#! block export modus
+SQL
+
+#! block xml settings
+yyyy-MM-dd;yyyy-MM-dd-HH.mm.ss;rowset
+#! block xml column mapping
+#! block upserts
+#! block exclude from deletion
+
+#! block filters
+
+#! block filter templates
+
+#! block layout
+test.EMPLOYEE; $ZOOMBOX; 0.0; 0.0; 1.0
+test.EMPLOYEE; test.ROLE; -149.84494018554688; 162.62942504882812; 1.0
+test.EMPLOYEE; test.BONUS; 123.99859619140625; 134.87414169311523; 1.0
+test.EMPLOYEE; test.PROJECT; -159.97475910186768; -145.38434600830078; 1.0
+test.EMPLOYEE; test.EMPLOYEE; 51.0; 10.0; 1.0
+test.EMPLOYEE; test.DEPARTMENT; 53.5909423828125; -152.02740478515625; 1.0
+test.EMPLOYEE; test.SALARYGRADE; -14.952468872070312; 148.83824157714844; 1.0
+test.EMPLOYEE; test.PROJECT_PARTICIPATION; -151.9827423095703; 10.806991577148438; 1.0
+test.EMPLOYEE; boss#; 228.4896697998047; 13.715179443359375; 1.0
+
+#! block known
+# known association; decision pending
+
+#! block version
+16.2
